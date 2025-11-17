@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.11205.157 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetCoreAuthenticationDemo", "AspnetCoreAuthenticationDemo\AspnetCoreAuthenticationDemo.csproj", "{400E43F7-F688-4827-A628-5F6B509BAAF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreAuthenticationDemo1", "AspnetCoreAuthenticationDemo\AspNetCoreAuthenticationDemo1.csproj", "{400E43F7-F688-4827-A628-5F6B509BAAF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetCoreAuthenticationDemo.Security", "AspnetCoreAuthenticationDemo.Security\AspnetCoreAuthenticationDemo.Security.csproj", "{0F2410DD-3141-43FC-9C07-CE0E8E18EA50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetCoreAuthenticationDemo.Security1", "AspnetCoreAuthenticationDemo.Security\AspnetCoreAuthenticationDemo.Security1.csproj", "{0F2410DD-3141-43FC-9C07-CE0E8E18EA50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
