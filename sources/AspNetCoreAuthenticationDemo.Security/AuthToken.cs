@@ -6,8 +6,8 @@ namespace DustInTheWind.AspnetCoreAuthenticationDemo.Security;
 
 public class AuthToken
 {
-    public const string SecurityKey = "Your256BitSecretKeyWhichNeedsToBe32BytesLong!";
-    public const string Issuer = "AspnetcoreAuthenticationDemo";
+    public const string SecurityKey = "dhv0zjoVVzDtmUKi0thkXuqeuFJz5qKZmhyiXhWhcBnvhJ9ctFQKbsPVFx3MfeUNx4Huo5PQp8uCg2YhJDDC92tQa7AaRYSl";
+    public const string Issuer = "AspNetCoreAuthenticationDemo";
     public const string Audience = "user";
 
     private readonly JwtSecurityToken jwtToken;
