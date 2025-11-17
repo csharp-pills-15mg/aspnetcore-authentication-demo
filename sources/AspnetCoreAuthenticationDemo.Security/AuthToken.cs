@@ -10,7 +10,7 @@ public class AuthToken
     public const string Issuer = "AspnetcoreAuthenticationDemo";
     public const string Audience = "user";
 
-    private JwtSecurityToken jwtToken;
+    private readonly JwtSecurityToken jwtToken;
 
     public AuthToken(string username)
     {

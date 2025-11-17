@@ -2,6 +2,7 @@ using System.Text;
 using DustInTheWind.AspnetCoreAuthenticationDemo.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace DustInTheWind.AspnetCoreAuthenticationDemo;
 
@@ -16,9 +17,48 @@ public static class Program
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen(setup =>
+        {
+            setup.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                Type = SecuritySchemeType.Http,
+                Scheme = "Bearer",
+                BearerFormat = "JWT",
+                In = ParameterLocation.Header,
+                Description = "JWT Authorization header using the Bearer scheme."
+            });
+            setup.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new string[] { }
+                }
+            });
+        });
 
-        ConfigureServices(builder.Services);
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                SymmetricSecurityKey symmetricSecurityKey = new(Encoding.UTF8.GetBytes(AuthToken.SecurityKey));
+
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = AuthToken.Issuer,
+                    ValidAudience = AuthToken.Audience,
+                    IssuerSigningKey = symmetricSecurityKey
+                };
+            });
 
         WebApplication app = builder.Build();
 
@@ -35,24 +75,5 @@ public static class Program
         app.MapControllers();
 
         app.Run();
-    }
-
-    public static void ConfigureServices(IServiceCollection services)
-    {
-        SymmetricSecurityKey symmetricSecurityKey = new(Encoding.UTF8.GetBytes(AuthToken.SecurityKey));
-
-        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = AuthToken.Issuer,
-                    ValidAudience = AuthToken.Audience,
-                    IssuerSigningKey = symmetricSecurityKey
-                };
-            });
     }
 }
