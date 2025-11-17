@@ -1,4 +1,5 @@
 using System.Text;
+using DustInTheWind.AspnetCoreAuthenticationDemo.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -38,8 +39,7 @@ public static class Program
 
     public static void ConfigureServices(IServiceCollection services)
     {
-        string securityKey = "Your256BitSecretKeyWhichNeedsToBe32BytesLong!"; // Must be 32 bytes
-        SymmetricSecurityKey symmetricSecurityKey = new(Encoding.UTF8.GetBytes(securityKey));
+        SymmetricSecurityKey symmetricSecurityKey = new(Encoding.UTF8.GetBytes(AuthToken.SecurityKey));
 
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
@@ -49,16 +49,10 @@ public static class Program
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "AspnetcoreAuthenticationDemo",
-                    ValidAudience = "user",
+                    ValidIssuer = AuthToken.Issuer,
+                    ValidAudience = AuthToken.Audience,
                     IssuerSigningKey = symmetricSecurityKey
                 };
             });
-
-        //services.Configure<CookiePolicyOptions>(options =>
-        //{
-        //    options.CheckConsentNeeded = context => true;
-        //    options.MinimumSameSitePolicy = SameSiteMode.None;
-        //});
     }
 }

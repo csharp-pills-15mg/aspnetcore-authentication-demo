@@ -1,7 +1,6 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Text;
+﻿using DustInTheWind.AspnetCoreAuthenticationDemo.Models;
+using DustInTheWind.AspnetCoreAuthenticationDemo.Security;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 
 namespace DustInTheWind.AspnetCoreAuthenticationDemo.Controllers;
 
@@ -10,21 +9,18 @@ namespace DustInTheWind.AspnetCoreAuthenticationDemo.Controllers;
 public class AuthController : ControllerBase
 {
     [HttpPost]
-    public IActionResult GetToken()
+    [Route("token")]
+    public IActionResult GetToken(TokenApiRequest apiRequest)
     {
-        string securityKey = "Your256BitSecretKeyWhichNeedsToBe32BytesLong!";
-        SymmetricSecurityKey symmetricSecurityKey = new(Encoding.UTF8.GetBytes(securityKey));
-        SigningCredentials signingCredentials = new(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
+        bool areCredentialsValid = apiRequest.Username == "demo" && apiRequest.Password == "demo";
+        if (!areCredentialsValid)
+            return Unauthorized();
 
-        JwtSecurityToken token = new(
-            issuer: "AspnetcoreAuthenticationDemo",
-            audience: "user",
-            expires: DateTime.Now.AddHours(1),
-            signingCredentials: signingCredentials
-        );
+        AuthToken authToken = new(apiRequest.Username);
 
-        string jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
-
-        return Ok(jwtToken);
+        return Ok(new TokenApiResponse
+        {
+            Token = authToken
+        });
     }
 }
