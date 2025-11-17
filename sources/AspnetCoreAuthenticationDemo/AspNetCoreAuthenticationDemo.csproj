@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AspnetCoreAuthenticationDemo.Security\AspnetCoreAuthenticationDemo.Security1.csproj" />
+      <ProjectReference Include="..\AspnetCoreAuthenticationDemo.Security\AspNetCoreAuthenticationDemo.Security.csproj" />
     </ItemGroup>
 
 </Project>
