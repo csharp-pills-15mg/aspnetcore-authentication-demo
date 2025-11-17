@@ -37,6 +37,7 @@ public class Program
                 };
             });
 
+        // Note: Use any mediator library you prefer. RequestR is used here as an example.
         builder.Services.AddUseCaseEngine(options =>
         {
             options.AddFromAssemblyContaining<GenerateJwtTokenRequest>();
