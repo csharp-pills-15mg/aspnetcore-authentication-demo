@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AssemblyName>DustInTheWind.$(MSBuildProjectName)</AssemblyName>
+        <RootNamespace>DustInTheWind.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="RequestR" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\AspNetCoreAuthenticationDemo.Security\AspNetCoreAuthenticationDemo.Security.csproj" PrivateAssets="All" />
+    </ItemGroup>
+
+</Project>

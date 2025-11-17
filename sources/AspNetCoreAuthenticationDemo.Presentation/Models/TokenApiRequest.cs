@@ -1,4 +1,4 @@
-﻿namespace DustInTheWind.AspnetCoreAuthenticationDemo.Models;
+﻿namespace DustInTheWind.AspNetCoreAuthenticationDemo.Presentation.Models;
 
 public class TokenApiRequest
 {
