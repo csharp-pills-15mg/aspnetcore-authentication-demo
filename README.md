@@ -2,12 +2,18 @@
 
 Tutorial that shows how to implement an Bearer Authentication with JWT token.
 
-## License
+## Repo Structure
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+The repo provides multiple branches:
 
-## Donations
+- `00-new-project`
+  - Contains a new web project. No authentication.
+- `01-authentication-with-jwt`
+  - JWT Authentication is added. New endpoint, token generation and its validation.
+- `02-add-use-cases`
+  - Further improve the architecture by creating separate components for presentation, use cases and token management logic.
+  - Note: For a small project like this demo, this separation is an overengineering, but consider using this separation in real projects.
 
-> If you like my work and want to support me, you can buy me a coffee:
->
-> [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y62EZ8H)
+### Suggestion
+
+Compare branches between them to easier see what code was added/changed.
