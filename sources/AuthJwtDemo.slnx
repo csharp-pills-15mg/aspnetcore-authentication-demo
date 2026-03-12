@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="AuthJwtDemo.Application/AuthJwtDemo.Application.csproj" />
+  <Project Path="AuthJwtDemo.Presentation/AuthJwtDemo.Presentation.csproj" />
+  <Project Path="AuthJwtDemo.Security/AuthJwtDemo.Security.csproj" />
+  <Project Path="AuthJwtDemo/AuthJwtDemo.csproj" />
+</Solution>

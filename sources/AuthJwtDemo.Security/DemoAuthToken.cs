@@ -2,17 +2,17 @@
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DustInTheWind.AspnetCoreAuthenticationDemo.Security;
+namespace DustInTheWind.AuthJwtDemo.Security;
 
-public class AuthToken
+public class DemoAuthToken
 {
     public const string SecurityKey = "dhv0zjoVVzDtmUKi0thkXuqeuFJz5qKZmhyiXhWhcBnvhJ9ctFQKbsPVFx3MfeUNx4Huo5PQp8uCg2YhJDDC92tQa7AaRYSl";
-    public const string Issuer = "AspNetCoreAuthenticationDemo";
+    public const string Issuer = "AuthJwtDemo";
     public const string Audience = "user";
 
     private readonly JwtSecurityToken jwtToken;
 
-    public AuthToken(string username)
+    public DemoAuthToken(string username)
     {
         SymmetricSecurityKey symmetricSecurityKey = new(Encoding.UTF8.GetBytes(SecurityKey));
         SigningCredentials signingCredentials = new(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
@@ -31,7 +31,7 @@ public class AuthToken
         return tokenHandler.WriteToken(jwtToken);
     }
 
-    public static implicit operator string(AuthToken authToken)
+    public static implicit operator string(DemoAuthToken authToken)
     {
         return authToken.ToString();
     }

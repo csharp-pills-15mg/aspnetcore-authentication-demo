@@ -1,12 +1,12 @@
 using System.Text;
-using DustInTheWind.AspnetCoreAuthenticationDemo.Security;
-using DustInTheWind.AspNetCoreAuthenticationDemo.Application.GenerateJwtToken;
-using DustInTheWind.AspNetCoreAuthenticationDemo.Presentation.Controllers;
+using DustInTheWind.AuthJwtDemo.Application.GenerateJwtToken;
+using DustInTheWind.AuthJwtDemo.Presentation.Controllers;
+using DustInTheWind.AuthJwtDemo.Security;
 using DustInTheWind.RequestR.Extensions.Microsoft.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DustInTheWind.AspNetCoreAuthenticationDemo;
+namespace DustInTheWind.AuthJwtDemo;
 
 public class Program
 {
@@ -23,7 +23,7 @@ public class Program
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
-                byte[] authenticationKeyBytes = Encoding.UTF8.GetBytes(AuthToken.SecurityKey);
+                byte[] authenticationKeyBytes = Encoding.UTF8.GetBytes(DemoAuthToken.SecurityKey);
 
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -31,8 +31,8 @@ public class Program
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = AuthToken.Issuer,
-                    ValidAudience = AuthToken.Audience,
+                    ValidIssuer = DemoAuthToken.Issuer,
+                    ValidAudience = DemoAuthToken.Audience,
                     IssuerSigningKey = new SymmetricSecurityKey(authenticationKeyBytes)
                 };
             });

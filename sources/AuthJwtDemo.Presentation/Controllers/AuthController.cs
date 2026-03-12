@@ -1,9 +1,9 @@
-﻿using DustInTheWind.AspNetCoreAuthenticationDemo.Application.GenerateJwtToken;
-using DustInTheWind.AspNetCoreAuthenticationDemo.Presentation.Models;
+﻿using DustInTheWind.AuthJwtDemo.Application.GenerateJwtToken;
+using DustInTheWind.AuthJwtDemo.Presentation.Models;
 using DustInTheWind.RequestR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DustInTheWind.AspNetCoreAuthenticationDemo.Presentation.Controllers;
+namespace DustInTheWind.AuthJwtDemo.Presentation.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

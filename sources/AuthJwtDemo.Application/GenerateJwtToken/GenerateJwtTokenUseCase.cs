@@ -1,8 +1,8 @@
 ﻿using System.Security.Authentication;
-using DustInTheWind.AspnetCoreAuthenticationDemo.Security;
+using DustInTheWind.AuthJwtDemo.Security;
 using DustInTheWind.RequestR;
 
-namespace DustInTheWind.AspNetCoreAuthenticationDemo.Application.GenerateJwtToken;
+namespace DustInTheWind.AuthJwtDemo.Application.GenerateJwtToken;
 
 internal class GenerateJwtTokenUseCase : IUseCase<GenerateJwtTokenRequest, GenerateJwtTokenResponse>
 {
@@ -10,7 +10,7 @@ internal class GenerateJwtTokenUseCase : IUseCase<GenerateJwtTokenRequest, Gener
     {
         VerifyCredentials(request);
 
-        AuthToken authToken = new(request.Username);
+        DemoAuthToken authToken = new(request.Username);
 
         return Task.FromResult(new GenerateJwtTokenResponse
         {

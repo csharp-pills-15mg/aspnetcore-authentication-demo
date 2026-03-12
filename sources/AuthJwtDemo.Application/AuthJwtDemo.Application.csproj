@@ -8,12 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
-        <PackageReference Include="RequestR" Version="2.2.0" />
+      <PackageReference Include="RequestR" Version="2.2.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\AspNetCoreAuthenticationDemo.Application\AspNetCoreAuthenticationDemo.Application.csproj" PrivateAssets="All" />
+        <ProjectReference Include="..\AuthJwtDemo.Security\AuthJwtDemo.Security.csproj" PrivateAssets="All" />
     </ItemGroup>
 
 </Project>

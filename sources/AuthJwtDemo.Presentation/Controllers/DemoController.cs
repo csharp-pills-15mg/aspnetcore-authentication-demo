@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DustInTheWind.AspNetCoreAuthenticationDemo.Presentation.Controllers;
+namespace DustInTheWind.AuthJwtDemo.Presentation.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

@@ -1,4 +1,4 @@
-﻿namespace DustInTheWind.AspNetCoreAuthenticationDemo.Application.GenerateJwtToken;
+﻿namespace DustInTheWind.AuthJwtDemo.Application.GenerateJwtToken;
 
 public class GenerateJwtTokenRequest
 {
