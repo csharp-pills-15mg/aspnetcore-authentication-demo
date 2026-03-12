@@ -42,9 +42,9 @@ public class Program
             app.MapOpenApi();
         }
 
-        app.UseAuthentication();
         app.UseHttpsRedirection();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllers();
