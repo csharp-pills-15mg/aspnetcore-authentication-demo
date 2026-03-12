@@ -44,7 +44,9 @@ public class Program
 
         app.UseAuthentication();
         app.UseHttpsRedirection();
+
         app.UseAuthorization();
+
 
         app.MapControllers();
 
