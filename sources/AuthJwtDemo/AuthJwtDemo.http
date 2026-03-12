@@ -1,4 +1,4 @@
-@RootPath = http://localhost:5024
+@RootPath = https://localhost:7297
 
 GET {{RootPath}}/api/demo/
 Accept: application/json
