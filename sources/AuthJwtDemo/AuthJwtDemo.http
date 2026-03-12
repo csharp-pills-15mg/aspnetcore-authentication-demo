@@ -1,13 +1,14 @@
 @RootPath = https://localhost:7297
-@JwtToken = tbd
 
 ###
 
 GET {{RootPath}}/api/demo/
 Accept: application/json
-Authorization: Bearer {{JwtToken}}
+Authorization: Bearer {{login.response.body.$.token}}
 
 ###
+
+# @name login
 
 POST {{RootPath}}/api/auth/token
 Content-Type: application/json
