@@ -1,4 +1,4 @@
-namespace DustInTheWind.AspNetCoreAuthenticationDemo;
+namespace DustInTheWind.AuthJwtDemo;
 
 public class Program
 {
