@@ -1,8 +1,8 @@
-﻿using DustInTheWind.AspnetCoreAuthenticationDemo.Models;
-using DustInTheWind.AspnetCoreAuthenticationDemo.Security;
+﻿using DustInTheWind.AuthJwtDemo.Models;
+using DustInTheWind.AuthJwtDemo.Security;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DustInTheWind.AspnetCoreAuthenticationDemo.Controllers;
+namespace DustInTheWind.AuthJwtDemo.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

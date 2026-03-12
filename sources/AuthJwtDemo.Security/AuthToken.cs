@@ -2,7 +2,7 @@
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DustInTheWind.AspnetCoreAuthenticationDemo.Security;
+namespace DustInTheWind.AuthJwtDemo.Security;
 
 public class AuthToken
 {

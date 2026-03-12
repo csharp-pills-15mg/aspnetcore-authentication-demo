@@ -1,0 +1,21 @@
+@RootPath = https://localhost:7297
+
+###
+
+GET {{RootPath}}/api/demo/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzMzMjAyNzAsImlzcyI6IkFzcE5ldENvcmVBdXRoZW50aWNhdGlvbkRlbW8iLCJhdWQiOiJ1c2VyIn0.RTMgPhgecnWT2FQNVtYbjuFuewQ8KOFiaHlBN3pxLQQ
+
+###
+
+POST {{RootPath}}/api/auth/token
+Content-Type: application/json
+
+{
+  "username": "demo",
+  "password": "demo"
+}
+
+````````
+
+# Response

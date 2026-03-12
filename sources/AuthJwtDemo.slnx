@@ -1,0 +1,4 @@
+<Solution>
+    <Project Path="AuthJwtDemo/AuthJwtDemo.csproj" />
+    <Project Path="AuthJwtDemo.Security/AuthJwtDemo.Security.csproj" />
+</Solution>

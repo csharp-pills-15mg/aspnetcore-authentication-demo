@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\AspNetCoreAuthenticationDemo.Security\AspNetCoreAuthenticationDemo.Security.csproj" />
+		<ProjectReference Include="..\AuthJwtDemo.Security\AuthJwtDemo.Security.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
 </Project>

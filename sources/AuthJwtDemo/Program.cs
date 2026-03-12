@@ -1,9 +1,9 @@
 using System.Text;
-using DustInTheWind.AspnetCoreAuthenticationDemo.Security;
+using DustInTheWind.AuthJwtDemo.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DustInTheWind.AspNetCoreAuthenticationDemo;
+namespace DustInTheWind.AuthJwtDemo;
 
 public class Program
 {
