@@ -1,0 +1,19 @@
+@RootPath = https://localhost:7297
+
+###
+
+GET {{RootPath}}/api/demo/
+Accept: application/json
+Authorization: Bearer {{login.response.body.$.token}}
+
+###
+
+# @name login
+
+POST {{RootPath}}/api/auth/token
+Content-Type: application/json
+
+{
+  "username": "demo",
+  "password": "demo"
+}
